@@ -70,33 +70,33 @@ select = input()
 
 if select == "LOBBY":
     select = 'A'
-if select == "DEPARTMENT CHAIR OFFICE":
+elif select == "DEPARTMENT CHAIR OFFICE":
     select = 'B'    
-if select == "FACULTY ROOM A":
+elif select == "FACULTY ROOM A":
     select = 'C'
-if select == "FACULTY ROOM B":
+elif select == "FACULTY ROOM B":
     select = 'D'
-if select == "STAIR 1":
+elif select == "STAIR 1":
     select = 'E'
-if select == "ITSOC OFFICE":
+elif select == "ITSOC OFFICE":
     select = 'F'
-if select == "COMFORT ROOM 1":
+elif select == "COMFORT ROOM 1":
     select = 'G'
-if select == "LECTURE ROOM 1":
+elif select == "LECTURE ROOM 1":
     select = 'H'
-if select == "LECTURE ROOM 2":
+elif select == "LECTURE ROOM 2":
     select = 'I'
-if select == "CONFERENCE ROOM":
+elif select == "CONFERENCE ROOM":
     select = 'J'
-if select == "STAIR 2":
+elif select == "STAIR 2":
     select = 'K'
-if select == "LECTURE ROOM 4":
+elif select == "LECTURE ROOM 4":
     select = 'L'
-if select == "COMSOC OFFICE":
+elif select == "COMSOC OFFICE":
     select = 'M'
-if select == "COMFORT ROOM 2":
+elif select == "COMFORT ROOM 2":
     select = 'N'
-if select == "LECTURE ROOM 3":
+elif select == "LECTURE ROOM 3":
     select = 'O'
     
 startPosition = 'A'
