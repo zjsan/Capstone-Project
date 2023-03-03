@@ -1,145 +1,146 @@
 #dfs traversal
-def maze(graph,start,end):
+def pathfinder(graph,start,end):
 
-    
-    search_stack = []#creating an empty stack for the traversal
-    search_stack.append(start)
-    visited = []#list for visited rooms
-    
+    search_queue = []#list to add nodes in the graph
+    search_queue.append(start)#adding starting node in the queue
+    visited = []#list for marked nodes during the traversal
 
-    #continue traversing all rooms
-    #until the stack is empty
-    while search_stack:
-
-        currentRoom = search_stack.pop()#popping recently added element --> LIFO RULE
-        goalRoom = currentRoom[-1]#will use to search a path from current room to goalroom
-        nextRooms = graph[goalRoom]
-
-        #traversing all rooms
-        #adding possible paths
-        for nextRoom in nextRooms:
-            if nextRoom not in visited:
-                path = list(currentRoom)#creating a list of possbile path and appending rooms that leads to goal room
-                path.append(nextRoom)
-                search_stack.append(path)#appending path in the stack
-                visited.append(nextRoom)#marking down visited rooms
-
-                #checking if currentRoom is the goalRoom
-                #if goal room is found break loop
-                if nextRoom == end:
-                    return(path)
+    #while the queue is not empty
+    #continue traversing 
+    #until queue is empty
+    while search_queue: 
+        node = search_queue.pop(0)#getting first element in the queue
+        lastNode = node[-1]#will use to search a path from a node to last node
+        nextNodes = graph[lastNode]#appending lastnode for nextnode
+        
+        #traversing a path from current node to goal node
+        #adding possible paths to the queue
+        for nextNode in nextNodes:
+            path = list(node)#list to contain possible paths
+            path.append(nextNode)
+            search_queue.append(path)#appending goal path in the queue
+            #checking if node is goal
+            #if goal has reached
+            #get out of the loop
+            if nextNode == end:
+                path.pop(0)
+                return path#displaying the path
+            #traversing all neighbour nodes if goal is not yet reached
+            visited.append(node)#marking the node as visited
+    return False
                 
 #creating the graph using dictionary
 
-#A-> LOBBY
-#B-> DEPARTMENT CHAIR OFFICE
-#C-> FACULTY ROOM A
-#D-> FACULTY ROOM B
-#E-> STAIR 1
-#F-> ITSOC OFFICE
-#G-> COMFORT ROOM 1
-#H-> LECTURE ROOM 1
-#I-> LECTURE ROOM 2
-#J-> CONFERENCE ROOM
-#K-> STAIR 2
-#L-> LECTURE ROOM 4
-#M-> COMSOC OFFICE
-#N-> COMFORT ROOM 2
-#O-> LECTURE ROOM 3
+#0-> LOBBY
+#1-> DEPARTMENT CHAIR OFFICE
+#2-> FACULTY ROOM A
+#3-> FACULTY ROOM B
+#4-> CONFERENCE ROOM
+#5-> STAIR
+#6-> ITSOC OFFICE
+#7-> LECTURE ROOM 100C
+#8-> LECTURE ROOM 100B 
+#9-> COMSOC OFFICE
+#10-> STAIR 
+#11-> COMFORT ROOM
+#12-> LECTURE ROOM
+#13-> LECTURE ROOM 100A
+#14-> COMFORT ROOM
 graph = {
-        'A' : ['B','C'],
-        'B' : ['D'],
-        'C' : ['J'],
-        'D' : ['E','H'],
-        'E' : ['F', 'H'],
-        'F' : ['G','H'],
-        'G' : [],
-        'H' : ['I'],
-        'I' : [],
-        'J' : ['K', 'L'],
-        'K' : ['M', 'L'],
-        'L' : ['O'],
-        'M' : ['N','L'],
-        'N' : [],
-        'O' : [],
+        '0' : ['1','2'],
+        '1' : ['3'],
+        '2' : ['4'],
+        '3' : ['5','6','7'],
+        '4' : ['8', '9','10'],
+        '5' : [],
+        '6' : ['11'],
+        '7' : ['12'],
+        '8' : ['13'],
+        '9' : ['14'],
+        '10' : [],
+        '11' : [],
+        '12': ['15'],
+        '13' : [],
+        '14' : [],
 }
-
 
 print("PLEASE SELECT ROOM: ")
 select = input()
 
-if select == "LOBBY":
-    select = 'A'
-elif select == "DEPARTMENT CHAIR OFFICE":
-    select = 'B'    
-elif select == "FACULTY ROOM A":
-    select = 'C'
-elif select == "FACULTY ROOM B":
-    select = 'D'
-elif select == "STAIR 1":
-    select = 'E'
-elif select == "ITSOC OFFICE":
-    select = 'F'
-elif select == "COMFORT ROOM 1":
-    select = 'G'
-elif select == "LECTURE ROOM 1":
-    select = 'H'
-elif select == "LECTURE ROOM 2":
-    select = 'I'
-elif select == "CONFERENCE ROOM":
-    select = 'J'
-elif select == "STAIR 2":
-    select = 'K'
-elif select == "LECTURE ROOM 4":
-    select = 'L'
-elif select == "COMSOC OFFICE":
-    select = 'M'
-elif select == "COMFORT ROOM 2":
-    select = 'N'
-elif select == "LECTURE ROOM 3":
-    select = 'O'
+if select == "LOBBY" or "lobby":
+    select = '0'
+if select == "DEPARTMENT CHAIR OFFICE" or "department chair office":
+    select = '1'    
+if select == "Faculty room B":
+    select = '2'
+if select == "FACULTY ROOM A":
+     select = '3'
+if select == "CONFERENCE ROOM":
+     select = '4'
+if select == "STAIR":
+     select = '5'
+if select == "ITSOC OFFICE":
+     select = '6'
+if select == "LECTURE ROOM 100C":
+    select = '7'
+if select == "LECTURE ROOM 100B":
+     select = '8'
+if select == "COMSOC OFFICE":
+     select = '9'
+if select == "STAIR":
+     select = '10'
+if select == "COMFORT ROOM":
+    select = '11'
+if select == " ":
+     select = '12'
+if select == "LECTURE 100A":
+     select = '13'
+if select == "COMFORT ROOM":
+     select = '14'
+if select == "WEATHER FORECASTING AND MODELING LABORATORY":
+    select = '15'
     
-startPosition = 'A'
+startPosition = '0'
 
 if startPosition == select:
     print("you are already at that position")
     exit()
-    
-myList = []
-myList = maze(graph,startPosition,select)
+else:
+    myList = []
+    myList = pathfinder(graph,startPosition,select)
 
-newList = []
-for x in myList:
-    if x == 'A':
-        newList.append("LOBBY")
-    if x == 'B':
-        newList.append("DEPARTMENT CHAIR OFFICE")
-    if x == 'C':
-        newList.append("FACULY ROOM A")
-    if x == 'D':
-        newList.append("FACULTY B")
-    if x == 'E':
-        newList.append("STAIR 1")
-    if x == 'F':
-        newList.append("ITSOC OFFICE")
-    if x == 'G':
-        newList.append("COMFORT ROOM 1")
-    if x == 'H':
-        newList.append("LECTURE ROOM1")
-    if x == 'I':
-        newList.append("LECTURE ROOM2")
-    if x == 'J':
-        newList.append("CONFERENCE ROOM")
-    if x == 'K':
-        newList.append("STAIR 2")
-    if x == 'L':
-        newList.append("LECTURE ROOM 4")
-    if x == 'M':
-        newList.append("COMSOC OFFICE")
-    if x == 'N':
-        newList.append("COMFORT ROOM 2")
-    if x == 'O':
-        newList.append("LECTURE ROOM 3")
+    newList = []
+    for x in myList:
+        if x == '0':
+            newList.append("LOBBY")
+        if x == '1':
+            newList.append("DEPARTMENT CHAIR OFFICE -> TURN LEFT")
+        if x == '2':
+            newList.append("FACULY ROOM B -> TURN RIGHT")
+        # if x == 'D':
+            #newList.append("FACULTY B")
+        # if x == 'E':
+    #     newList.append("STAIR 1")
+    # if x == 'F':
+    #     newList.append("ITSOC OFFICE")
+    # if x == 'G':
+    #     newList.append("COMFORT ROOM 1")
+    # if x == 'H':
+    #     newList.append("LECTURE ROOM1")
+    # if x == 'I':
+    #     newList.append("LECTURE ROOM2")
+    # if x == 'J':
+    #     newList.append("CONFERENCE ROOM")
+    # if x == 'K':
+    #     newList.append("STAIR 2")
+    # if x == 'L':
+    #     newList.append("LECTURE ROOM 4")
+    # if x == 'M':
+    #     newList.append("COMSOC OFFICE")
+    # if x == 'N':
+    #     newList.append("COMFORT ROOM 2")
+    # if x == 'O':
+    #     newList.append("LECTURE ROOM 3")
         
-for x in newList:
-    print(x)
+    for x in newList:
+        print(x)
