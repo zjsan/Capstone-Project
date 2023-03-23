@@ -6,7 +6,10 @@
  * {
     font-family: myFirstFont;
  }
-
+.radios{
+    text-align: left;
+    color: #eee;
+}
 .select{
     padding: 8px 12px;
     color: #333;
@@ -25,8 +28,12 @@
     display: flex;
     justify-content: center;
 }
+.roomtitle{
+    position: relative;
+    text-align: center;
+}
 body{
-    background: linear-gradient(#154c79,#063970);
+    background: linear-gradient(#0b0c10,#1f2833);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
