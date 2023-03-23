@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAPSTONE PROJECT</title>
+    <link rel="stylesheet" href="style.css">
 
     <link><a href="index.html">HOME</a></link>
     <link><a href="#aboutus">ABOUT US</a></link>
 </head>
 <body>
-    <div>
+    <br>
+    <br>
+    <div id = "appname">
         <h1>NAME OF THE SYSTEM</h1>
-        <p>AI POWERED CIS AND CAB BUILDING ROOM SIMULATION WITH OPTIMAL PATH</p>
+        <p align = "center">AI POWERED CIS AND CAB BUILDING ROUTING SYSTEM</p>
     </div>
-    <div>
+    <div align="center">
         <form action="/action_page.php">
-            <label for="room">SELECT ROOM:</label>
-            <select name="room" id="room">
+            <select class = "select" name="room" id="room">
+              <option disabled selected value="">---PLEASE SELECT ROOM---</option>
               <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
               <option value="facultyb">FACULTY ROOM B</option>
               <option value="facultya">FACULTY ROOM A</option>
@@ -28,9 +31,10 @@
           </form>
     </div>
     
-    <div id ="aboutus">
+    
+    <div id ="aboutus" align="center">
         <h1>ABOUT US</h1>
-        <h3>MEET THE DEVS</h3>
+        <h3>MEET THE ENGINEERS</h3>
         <p>John Carlo M. Bisquera</p>
         <p>Zainal Jumaine D. Santos</p>
     </div>

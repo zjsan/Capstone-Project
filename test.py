@@ -1,34 +1,4 @@
-#dfs traversal
-def pathfinder(graph,start,end):
 
-    search_queue = []#list to add nodes in the graph
-    search_queue.append(start)#adding starting node in the queue
-    visited = []#list for marked nodes during the traversal
-
-    #while the queue is not empty
-    #continue traversing 
-    #until queue is empty
-    while search_queue: 
-        node = search_queue.pop(0)#getting first element in the queue
-        lastNode = node[-1]#will use to search a path from a node to last node
-        nextNodes = graph[lastNode]#appending lastnode for nextnode
-        
-        #traversing a path from current node to goal node
-        #adding possible paths to the queue
-        for nextNode in nextNodes:
-            path = list(node)#list to contain possible paths
-            path.append(nextNode)
-            search_queue.append(path)#appending goal path in the queue
-            #checking if node is goal
-            #if goal has reached
-            #get out of the loop
-            if nextNode == end:
-                path.pop(0)
-                return path#displaying the path
-            #traversing all neighbour nodes if goal is not yet reached
-            visited.append(node)#marking the node as visited
-    return False
-                
 #creating the graph using dictionary
 
 #0-> LOBBY
@@ -62,7 +32,39 @@ graph = {
         '12': ['15'],
         '13' : [],
         '14' : [],
+        '15': [],
 }
+
+
+def pathfinder(graph,start,goal):
+
+    search_queue = []#list to add nodes in the graph
+    search_queue.append(start)#adding starting node in the queue
+    visited = []#list for marked nodes during the traversal
+
+    #while the queue is not empty
+    #continue traversing 
+    #until queue is empty
+    while search_queue: 
+        node = search_queue.pop(0)#getting first element in the queue
+        lastNode = node[-1]#will use to search a path from a node to last node
+        nextNodes = graph[lastNode]#appending lastnode for nextnode
+        
+        #traversing a path from current node to goal node
+        #adding possible paths to the queue
+        for nextNode in nextNodes:
+            path = list(node)#list to contain possible paths
+            path.append(nextNode)
+            search_queue.append(path)#appending goal path in the queue
+            #checking if node is goal
+            #if goal has reached
+            #get out of the loop
+            if nextNode == goal:
+                #path.pop(0)
+                return path #displaying the path
+            #traversing all neighbour nodes if goal is not yet reached
+            visited.append(node)#marking the node as visited
+    return False
 
 print("PLEASE SELECT ROOM: ")
 select = input()
@@ -99,10 +101,15 @@ if select == "COMFORT ROOM":
      select = '14'
 if select == "WEATHER FORECASTING AND MODELING LABORATORY":
     select = '15'
-    
-startPosition = '0'
+# else:
+#     print("Room Doesn't Exist")
+#     exit()
 
-if startPosition == select:
+
+startPosition = '0'
+myList = pathfinder(graph,startPosition,select)
+
+if select == startPosition:
     print("you are already at that position")
     exit()
 else:
@@ -117,30 +124,32 @@ else:
             newList.append("DEPARTMENT CHAIR OFFICE -> TURN LEFT")
         if x == '2':
             newList.append("FACULY ROOM B -> TURN RIGHT")
-        # if x == 'D':
-            #newList.append("FACULTY B")
-        # if x == 'E':
-    #     newList.append("STAIR 1")
-    # if x == 'F':
-    #     newList.append("ITSOC OFFICE")
-    # if x == 'G':
-    #     newList.append("COMFORT ROOM 1")
-    # if x == 'H':
-    #     newList.append("LECTURE ROOM1")
-    # if x == 'I':
-    #     newList.append("LECTURE ROOM2")
-    # if x == 'J':
-    #     newList.append("CONFERENCE ROOM")
-    # if x == 'K':
-    #     newList.append("STAIR 2")
-    # if x == 'L':
-    #     newList.append("LECTURE ROOM 4")
-    # if x == 'M':
-    #     newList.append("COMSOC OFFICE")
-    # if x == 'N':
-    #     newList.append("COMFORT ROOM 2")
-    # if x == 'O':
-    #     newList.append("LECTURE ROOM 3")
-        
+        if x == '3':
+            newList.append("FACULTY ROOM A")
+        if x == '4':
+         newList.append("CONFERENCE ROOM")
+        if x == '5':
+            newList.append("STAIR")
+        if x == '6':
+            newList.append("ITSOC OFFICE")
+        if x == '7':
+            newList.append("LECTURE ROOM 100C")
+        if x == '8':
+            newList.append("LECTURE ROOM 100B")
+        if x == '9':
+            newList.append("COMSOC OFFICE")
+        if x == '10':
+            newList.append("STAIR")
+        if x == '11':
+            newList.append("COMFORT ROOM")
+        if x == '12':
+            newList.append(" ")
+        if x == '13':
+            newList.append("LECTURE ROOM 100A")
+        if x == '14':
+            newList.append("COMFORT ROOM")
+        if x == '15':
+            newList.append("WEATHER FORECASTING AND MODELING LABORATORY")
+
     for x in newList:
         print(x)
