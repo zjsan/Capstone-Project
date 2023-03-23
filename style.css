@@ -11,6 +11,19 @@
     padding: 8px 12px;
     color: #333;
     text-align: center;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.select:focus,
+.select:hover{
+    outline: none;
+    border: 2px solid #bbb;
+}
+.flex-container{
+    display: flex;
+    justify-content: center;
 }
 body{
     background: linear-gradient(#154c79,#063970);
