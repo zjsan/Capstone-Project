@@ -78,6 +78,20 @@ a{
     position: relative;
     text-align: center;
 }
-#aboutus{
+#roomButton{
+    text-align: center;
+
+
+}
+#roomButton >a{
+    text-decoration: none;
+    color: #eee;
+    border: none;
+    background-color: #303c6c;
+    border-radius: 20px;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+    margin: 10px 5px;
 }
 
