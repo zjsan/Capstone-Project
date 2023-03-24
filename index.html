@@ -7,69 +7,78 @@
     <title>CAPSTONE PROJECT</title>
     <link rel="stylesheet" href="style.css">
 
-    <link><a href="index.html">HOME</a></link>
-    <link><a href="#aboutus">ABOUT US</a></link>
+    <!--LINKS-->
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#aboutus">ABOUT US</a></li>
+      </ul>
+    </nav>
 </head>
 <body>
-
      <!--LANDING PAGE-->
-    <br>
-    <br>
-    <div id = "appname">
-        <h1>WALA PA NAME SYSTEM NATIN PRE '_' </h1>
-        <p align = "center">CIS AND CAB BUILDING ROOMS ROUTING SYSTEM</p>
-    </div>
-
-    <!--ROOM SELECTION-->
-    <div class = "flex-container" align="center">
-        <div>
-            <h3 class>OFFICES</h3>
-            <form action="/action_page.php">
-                <select class = "select" name="room" id="room">
-                  <option disabled selected value="">---PLEASE SELECT ROOM---</option>
-                  <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
-                  <option value="facultyb">FACULTY ROOM B</option>
-                  <option value="facultya">FACULTY ROOM A</option>
-                  <option value="conference">CONFERECE ROOM</option>
-                </select>
-                <br><br>
-                <input type="submit" value="Submit">
-              </form>
-        </div>
-        <div>
-            <h3>LABORATORY ROOMS</h3>
-            <form action="/action_page.php">
-                <select class = "select" name="room1" id="room1">
-                  <option disabled selected value="">---PLEASE SELECT ROOM---</option>
-                  <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
-                  <option value="facultyb">FACULTY ROOM B</option>
-                  <option value="facultya">FACULTY ROOM A</option>
-                  <option value="conference">CONFERECE ROOM</option>
-                </select>
-                <br><br>
-                <input type="submit" value="Submit">
-              </form>
-        </div>
-        <div>
+  <section class="landing">
+    <div class="landing">
+      <h1 class = "maintext">NEED SYSTEM NAME</h1>
+      <p align = "center" id="syscaption">CIS AND CAB BUILDING ROOMS ROUTING SYSTEM</p>
+  </div>
+  <br><br><br><br>
+  </section>  
+    <br><br><br><br><br>
+  <section>
+      <!--ROOM SELECTION-->
+      <div id="start">
+        <div class = "flex-container" align="center">
+          <div>
+              <h3 class>OFFICES</h3>
+              <form action="/action_page.php">
+                  <select class = "select" name="room" id="room" size="1">
+                    <option disabled selected value="">---PLEASE SELECT ROOM---</option>
+                    <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
+                    <option value="facultyb">FACULTY ROOM B</option>
+                    <option value="facultya">FACULTY ROOM A</option>
+                    <option value="conference">CONFERECE ROOM</option>
+                  </select>
+                  <br><br>
+                  <input type="submit" value="Submit">
+                </form>
+          </div>
+          <div>
+              <h3>LABORATORY ROOMS</h3>
+              <form action="/action_page.php">
+                  <select class = "select" name="room1" id="room1" size="1">
+                    <option disabled selected value="">---PLEASE SELECT ROOM---</option>
+                    <option value="lab1">ROOM 1</option>
+                    <option value="lab2">ROOM 2</option>
+                    <option value="lab3">ROOM 3</option>
+                    <option value="lab4">ROOM 4</option>
+                    <option value="lab5">ROOM 5</option>
+                    <option value="lab6">ROOM 6</option>
+                  </select>
+                  <br><br>
+                  <input type="submit" value="Submit">
+                </form>
+          </div>
+          <div>
             <h3>LECTURE ROOMS</h3>
             <form action="/action_page.php">
-                <select class = "select" name="room" id="room">
+                <select class = "select" name="room3" id="room3">
                   <option disabled selected value="">---PLEASE SELECT ROOM---</option>
-                  <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
-                  <option value="facultyb">FACULTY ROOM B</option>
-                  <option value="facultya">FACULTY ROOM A</option>
-                  <option value="conference">CONFERECE ROOM</option>
+                  <option value="lectureA">100 A</option>
+                  <option value="lectureB">100 B</option>
+                  <option value="lectureC">100 C</option>
+                  <option value="lectureD">100 D</option>
                 </select>
                 <br><br>
                 <input type="submit" value="Submit">
               </form>
         </div>
-    </div>
-    
+      </div>
+  </section>
     <!--ABOUT US-->
     <div id ="aboutus" align="center">
-        <h1>ABOUT US</h1>
-        <h3>MEET THE ENGINEERS</h3>
+        <h1 class="maintext">ABOUT US</h1>
+        <h3>MEET THE DEVS</h3>
         <p>John Carlo M. Bisquera</p>
         <p>Zainal Jumaine D. Santos</p>
     </div>

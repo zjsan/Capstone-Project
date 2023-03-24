@@ -1,14 +1,47 @@
-@font-face{
-    font-family: myFirstFont;
-    src: url(sansation_light.woff);
- }
- 
- * {
-    font-family: myFirstFont;
- }
-.radios{
-    text-align: left;
-    color: #eee;
+
+body{
+    background-color: #0b0c10;
+    background-image: url("Assets/bg1.jpg");
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%
+    
+    
+}
+.landing{
+    margin-top:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+}
+.landing >div{
+    max-height: 100%;
+    width: 100%;
+}
+.maintext{
+    color: #f4976c;
+}
+#syscaption{
+    margin-top:0px;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: #f4976c;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h3{
+    color:#ffff ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p{
+    color:#303c6c;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a{
+    color: #f4976c;
 }
 .select{
     padding: 8px 12px;
@@ -26,30 +59,10 @@
 }
 .flex-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 .roomtitle{
     position: relative;
     text-align: center;
 }
-body{
-    background: linear-gradient(#0b0c10,#1f2833);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%
-    
-}
-h1{
-    text-align: center;
-    color: #ffff;
-}
-h3{
-    color:#ffff ;
-}
-p{
-    color:#ffff ;
-}
-a{
-    color: #ffff;
-}
+
