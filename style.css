@@ -65,7 +65,7 @@ ul{
 }
 li{
     list-style-type: none;
-    float: left;
+    display: inline-block;
 }
 li a{
     margin-left: 0px;
@@ -91,10 +91,12 @@ li a:hover:not(.active)
     padding: 8px 12px;
     color: #333;
     text-align: center;
-    background-color: #eee;
+    background-color:none;
     border: 1px solid #ddd;
     cursor: pointer;
     border-radius: 5px;
+    width: 100%;
+    border: 1px #f4976c solid;
 }
 .select:focus,
 .select:hover{
@@ -114,14 +116,22 @@ li a:hover:not(.active)
     color: #eee;
     border: none;
     background-color: #303c6c;
-    border-radius: 20px;
-    padding: 10px 15px;
+    border-radius: 15px;
+    padding: 15px;
     display: inline-block;
     position: relative;
     margin: 10px 5px;
+    font-size: 15px;
 }
 #roomButton >a:hover
 {
     background-color: #212a4b;
 }
-
+#start
+{
+    margin-top: 30rem;
+}
+#aboutus
+{
+    margin-top: 40rem;
+}
