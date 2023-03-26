@@ -48,8 +48,21 @@ p{
     color:#303c6c;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
 a{
     color: #f4976c;
+    text-decoration: none;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-around;
 }
 .select{
     padding: 8px 12px;
@@ -64,10 +77,6 @@ a{
 .select:hover{
     outline: none;
     border: 2px solid #bbb;
-}
-.flex-container{
-    display: flex;
-    justify-content: space-around;
 }
 .roomtitle{
     position: relative;
