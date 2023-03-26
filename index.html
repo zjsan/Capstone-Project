@@ -31,6 +31,7 @@
   </section>  
     <br><br><br><br><br>
 
+  <!--forms-->
   <section id="start">
       <!--ROOM SELECTION-->
       <div id="roomselect">
@@ -39,7 +40,7 @@
               <h3 class>OFFICES</h3>
               <form action="/action_page.php">
                   <select class = "select" name="room" id="room" size="1">
-                    <option disabled selected value="">---PLEASE SELECT ROOM---</option>
+                    <option disabled selected value="" hidden>---SELECT ROOM---</option>
                     <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
                     <option value="facultyb">FACULTY ROOM B</option>
                     <option value="facultya">FACULTY ROOM A</option>
@@ -53,7 +54,7 @@
               <h3>LABORATORY ROOMS</h3>
               <form action="/action_page.php">
                   <select class = "select" name="room1" id="room1" size="1">
-                    <option disabled selected value="">---PLEASE SELECT ROOM---</option>
+                    <option disabled selected value="" hidden>---SELECT ROOM---</option>
                     <option value="lab1">ROOM 1</option>
                     <option value="lab2">ROOM 2</option>
                     <option value="lab3">ROOM 3</option>
@@ -69,7 +70,7 @@
             <h3>LECTURE ROOMS</h3>
             <form action="/action_page.php">
                 <select class = "select" name="room3" id="room3">
-                  <option disabled selected value="">---PLEASE SELECT ROOM---</option>
+                  <option disabled selected value="" hidden>---SELECT ROOM---</option>
                   <option value="lectureA">100 A</option>
                   <option value="lectureB">100 B</option>
                   <option value="lectureC">100 C</option>
@@ -83,8 +84,8 @@
   </section>
 
     <!--ABOUT US-->
-    <section>
-      <div id ="aboutus" align="center">
+    <section id ="aboutus">
+      <div align="center">
         <h1 class="maintext">ABOUT US</h1>
         <h3>MEET THE DEVS</h3>
         <p>John Carlo M. Bisquera</p>
