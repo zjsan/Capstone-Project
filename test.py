@@ -17,26 +17,47 @@
 #13-> LECTURE ROOM 100A
 #14-> COMFORT ROOM
 graph = {
-        '0' : ['1','2'],
-        '1' : ['3'],
-        '2' : ['4'],
-        '3' : ['5','6','7'],
-        '4' : ['8', '9','10'],
-        '5' : [],
-        '6' : ['11'],
-        '7' : ['12'],
-        '8' : ['13'],
-        '9' : ['14'],
-        '10' : [],
-        '11' : [],
-        '12': ['15'],
-        '13' : [],
-        '14' : [],
-        '15': [],
+    
+    "0": [("1"),("2")], 
+    "1": [("3")],
+    "2": [("4")],
+    "3": [("5"),("6"),("7")],
+    "4": [("8"),("9"),("10")],
+    "5": [()],
+    "6": [("11")],
+    "7": [("12")],
+    "8": [("13")],
+    "9": [("14")],
+    "10": [()],
+    "11": [()],
+    "12": [("15")],
+    "13": [()],
+    "14": [()],
+    "15": [("16")],
+    "16": [("17")],
+    "17": [("18")],
+    "18": [("19"),('20'),('21')],
+    "19": [()],
+    "20": [("22")],
+    "21": [("23")],
+    "22": [()],
+    "23": [("24")],
+    "24": [("25")],
+    "25": [("26")],
+    "26": [("27")],
+    "27": [("28")],
+    "28": [("29")],
+    "29": [("30"),("31"),("32")],
+    "30": [("33")],
+    "31": [()],
+    "32": [("34")],
+    "33": [()],
+    "34": [()],
+
 }
 
-
-def pathfinder(graph,start,goal):
+#unweighted optimal path
+def pathFinder(graph,start,end):
 
     search_queue = []#list to add nodes in the graph
     search_queue.append(start)#adding starting node in the queue
@@ -59,12 +80,12 @@ def pathfinder(graph,start,goal):
             #checking if node is goal
             #if goal has reached
             #get out of the loop
-            if nextNode == goal:
-                #path.pop(0)
-                return path #displaying the path
-            #traversing all neighbour nodes if goal is not yet reached
-            visited.append(node)#marking the node as visited
-    return False
+            if nextNode == end:
+                print("The optimal path is --> ",*path, end = " ")#displaying the path
+                return True
+        #traversing all neighbor nodes if goal is not yet reached
+        visited.append(node)#marking the node as visited
+    return False 
 
 print("PLEASE SELECT ROOM: ")
 select = input()
@@ -107,14 +128,14 @@ if select == "WEATHER FORECASTING AND MODELING LABORATORY":
 
 
 startPosition = '0'
-myList = pathfinder(graph,startPosition,select)
+myList = pathFinder(graph,startPosition,select)
 
 if select == startPosition:
     print("you are already at that position")
     exit()
 else:
     myList = []
-    myList = pathfinder(graph,startPosition,select)
+    myList = pathFinder(graph,startPosition,select)
 
     newList = []
     for x in myList:
