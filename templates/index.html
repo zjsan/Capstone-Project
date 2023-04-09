@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAPSTONE PROJECT</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css') }}">
 
     <!--LINKS-->
     <nav id="nav">
       <ul>
-        <li><a href="index.html">HOME</a></li>
+        <li><a href="{{ url_for('index')}}">HOME</a></li>
         <li><a href="#aboutus">ABOUT US</a></li>
       </ul>
     </nav>
@@ -32,7 +32,7 @@
     <br><br><br><br><br>
 
   <!--forms-->
-  <section id="start">
+  <section id="selectroom">
       <!--ROOM SELECTION-->
       <div id="roomselect">
         <div class = "flex-container" align="center">
