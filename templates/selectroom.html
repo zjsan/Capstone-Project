@@ -6,55 +6,5 @@
 {% endblock %}
 
 {% block selectroom %}
-     <!--forms-->
-  <section id="selectroom">
-    <!--ROOM SELECTION-->
-    <div id="roomselect">
-      <div class = "flex-container" align="center">
-        <div>
-            <h3 class>OFFICES</h3>
-            <form action="/action_page.php">
-                <select required class = "select" name="room" id="room" size="1">
-                  <option disabled selected value="" hidden>---SELECT ROOM---</option>
-                  <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
-                  <option value="facultyb">FACULTY ROOM B</option>
-                  <option value="facultya">FACULTY ROOM A</option>
-                  <option value="conference">CONFERECE ROOM</option>
-                </select>
-                <br><br>
-                <input type="submit" value="Submit">
-              </form>
-        </div>
-        <div>
-            <h3>LABORATORY ROOMS</h3>
-            <form action="/action_page.php">
-                <select required class = "select" name="room1" id="room1" size="1">
-                  <option disabled selected value="" hidden>---SELECT ROOM---</option>
-                  <option value="lab1">ROOM 1</option>
-                  <option value="lab2">ROOM 2</option>
-                  <option value="lab3">ROOM 3</option>
-                  <option value="lab4">ROOM 4</option>
-                  <option value="lab5">ROOM 5</option>
-                  <option value="lab6">ROOM 6</option>
-                </select>
-                <br><br>
-                <input type="submit" value="Submit">
-              </form>
-        </div>
-        <div>
-          <h3>LECTURE ROOMS</h3>
-          <form action="/action_page.php">
-              <select required class = "select" name="room3" id="room3">
-                <option disabled selected value="" hidden>---SELECT ROOM---</option>
-                <option value="lectureA">100 A</option>
-                <option value="lectureB">100 B</option>
-                <option value="lectureC">100 C</option>
-                <option value="lectureD">100 D</option>
-              </select>
-              <br><br>
-              <input type="submit" value="Submit">
-            </form>
-      </div>
-    </div>
-</section>
+<h1>{{selected}}</h1>
 {% endblock %}
