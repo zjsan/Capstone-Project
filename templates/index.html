@@ -38,10 +38,10 @@
         <div class = "flex-container" align="center">
           <div>
               <h3 class>OFFICES</h3>
-              <form action="/action_page.php">
-                  <select required class = "select" name="room" id="room" size="1">
+              <form action="{{ url_for('send_data')}}" method ="GET">
+                  <select required class = "select" name="offices" id="offices" size="1">
                     <option disabled selected value="" hidden>---SELECT ROOM---</option>
-                    <option value="dept_chair">DEPARTMENT CHAIR OFFICE</option>
+                    <option value = "dept_chair">DEPARTMENT CHAIR OFFICE</option>
                     <option value="facultyb">FACULTY ROOM B</option>
                     <option value="facultya">FACULTY ROOM A</option>
                     <option value="conference">CONFERECE ROOM</option>
