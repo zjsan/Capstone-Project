@@ -14,12 +14,24 @@ def index():
 
 
 @app.route('/#selectroom/', methods = ["GET","POST"])
-def send_data():
+def get_data():
 
-    #trying out flask html form data retrieval
+    #checking the form user submitted
+    #validating forms
+    selected = ""
+
     if request.method == "GET":
-         selected = request.args['offices']
-         return selected
+
+        if request.args['submit'] == 'submit_office':
+            office = request.args['offices']
+            selected = office
+            return selected
+        if request.args['submit'] == 'submit_lab':
+            lab = request.args['labrooms']
+            return lab
+        if request.args['submit'] == 'submit_lecture':
+            lecture_room = request.args['lecturerooms']
+            return lecture_room
     else:
         return redirect('index.html/#selectroom')
 
