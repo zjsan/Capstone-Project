@@ -26,14 +26,15 @@ def get_data():
         if request.args['submit'] == 'submit_office':
             office = request.args['offices']
             selected = office
-            return check_input(selected)
+            return main_ai(selected)
         
         if request.args['submit'] == 'submit_lab':
             lab = request.args['labrooms']
             return lab
         if request.args['submit'] == 'submit_lecture':
             lecture_room = request.args['lecturerooms'] 
-            return lecture_room
+            selected = lecture_room
+            return main_ai(selected)
     #fall back mechanism
     else:
         return redirect('index.html/#selectroom')

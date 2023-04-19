@@ -40,7 +40,7 @@ from app import index
 
 #pathGuide AI knowledge set 
 #still on the building's ground floor
-#narigat agdebug :)
+#nagrigat agdebug :)
 graph = {
     
     '0': ['1','2'], 
@@ -88,16 +88,32 @@ def check_input(selected):
 
     #input name condition is based on the HTML forms
     if input == 'dept_chair':
-        input = 'DEPARTMENT CHAIR OFFICE'
+        input = '1'
+        return input
     if input == 'facultyb':
-        goal_node = '2'
-        main(goal_node)
+        input = '2'
+        return input
     if input == 'facultya':
-        goal_node = '3'
-        main(goal_node)
+        input = '3'
+        return input
     if input == 'conference':
-        goal_node = '4'
-        main(goal_node)
+        input = '4'
+        return input
+    if input == 'itsoc':
+        input = '6'
+        return input
+    if input == 'lectureC':
+        input = '7'
+        return input
+    if input =='lectureB':
+        input = '8'
+        return input
+    if input == 'comsoc':
+        input = '9'
+        return input
+    if input == 'lectureA':
+        input = '13'
+        return input
     else:
         return "hello" #for debugging purposes
     
@@ -130,17 +146,24 @@ def path_generator(graph,start,end):
             if nextNode == end:
                 #displaying the path
                 print(*path)
-                return path
+                return(path)
         #traversing all neighbor nodes if goal is not yet reached
         visited.append(node)#marking the node as visited
-    return False  
+    return False   
 
-def main(goal_node):
+def ai_trigger(goal_node):
     
     start_node = '0'
     target_node = goal_node
 
     direction_list = []#empty list to contain the generated path
     direction_list = path_generator(graph,start_node,target_node)
-    
     return direction_list
+
+def main_ai(selected):
+    
+    node = check_input(selected)
+
+    my_list = []
+    my_list = ai_trigger(node)
+    return my_list
