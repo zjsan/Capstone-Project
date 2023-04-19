@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect
-import test
+from test import *
 
 app = Flask(__name__)
 
@@ -22,16 +22,19 @@ def get_data():
 
     if request.method == "GET":
 
+        #passing arguments to the AI based on the selected input
         if request.args['submit'] == 'submit_office':
             office = request.args['offices']
             selected = office
-            return selected
+            return check_input(selected)
+        
         if request.args['submit'] == 'submit_lab':
             lab = request.args['labrooms']
             return lab
         if request.args['submit'] == 'submit_lecture':
-            lecture_room = request.args['lecturerooms']
+            lecture_room = request.args['lecturerooms'] 
             return lecture_room
+    #fall back mechanism
     else:
         return redirect('index.html/#selectroom')
 
