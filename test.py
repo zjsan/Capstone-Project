@@ -40,7 +40,7 @@ from app import index
 
 #AI knowledge set(search space)
 #still on the building's ground floor
-#nagrigat agdebug :)
+#makauma agdebug :)
 graph = {
     
     '0': ['1','2'], 
