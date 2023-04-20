@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title%}
+    <title>PATH</title>
+{% endblock %}
+
+{% block path %}
+<div>
+    {% for x in direction %}
+    <p style="font-size: 15px; text-align: center;">{{x}}</p>
+    {% endfor %}
+</div>
+{% endblock %}  
