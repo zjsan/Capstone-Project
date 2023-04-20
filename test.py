@@ -104,6 +104,7 @@ def check_input(selected):
     elif input == 'itsoc':
         input = '6'
         return input
+    #skip input 5 -> need to work first on the ground floor 
     elif input == 'lectureC':
         input = '7'
         return input
