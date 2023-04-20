@@ -13,12 +13,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/#selectroom/', methods = ["GET","POST"])
+@app.route('/path/', methods = ["GET","POST"])
 def get_data():
 
     #checking the form user submitted
     #validating forms
     selected = ""
+    direction = []
 
     if request.method == "GET":
 
@@ -26,7 +27,10 @@ def get_data():
         if request.args['submit'] == 'submit_office':
             office = request.args['offices']
             selected = office
-            return main_ai(selected)
+            direction =  main_ai(selected)#passing user input to the ai
+
+            #returning the generated path/direction to the web browser
+            return render_template('selectroom.html',direction = direction)
         
         if request.args['submit'] == 'submit_lab':
             lab = request.args['labrooms']
@@ -34,14 +38,17 @@ def get_data():
         if request.args['submit'] == 'submit_lecture':
             lecture_room = request.args['lecturerooms'] 
             selected = lecture_room
-            return main_ai(selected)
+            direction = main_ai(selected)#passing user input to the ai
+
+            #returning the generate path/direction to the web server
+            return render_template('selectroom.html',direction = direction)
     #fall back mechanism
     else:
-        return redirect('index.html/#selectroom')
+        return redirect(url_for('index.html'))
 
-@app.route("/<room>")
-def show_data(room):
-    return f"<h1>{room}</h1>"
+#@app.route("/<room>")
+#def show_data(room):
+   # return f"<h1>{room}</h1>"
 
 if __name__ == '__main__':
     app.run(debug=True)

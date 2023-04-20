@@ -38,7 +38,7 @@ from app import index
 #33-> COMFORT ROOM
 #34-> ROOM 113
 
-#pathGuide AI knowledge set 
+#AI knowledge set(search space)
 #still on the building's ground floor
 #nagrigat agdebug :)
 graph = {
@@ -81,39 +81,42 @@ graph = {
 
 }
 
-#converting user input into AI pre-defined knowledge
+#converting user input into AI pre-defined knowledge(search space)
 def check_input(selected):
 
     input = selected
 
     #input name condition is based on the HTML forms
+
+    #cisrooms
     if input == 'dept_chair':
         input = '1'
         return input
-    if input == 'facultyb':
+    elif input == 'facultyb':
         input = '2'
         return input
-    if input == 'facultya':
+    elif input == 'facultya':
         input = '3'
         return input
-    if input == 'conference':
+    elif input == 'conference':
         input = '4'
         return input
-    if input == 'itsoc':
+    elif input == 'itsoc':
         input = '6'
         return input
-    if input == 'lectureC':
+    elif input == 'lectureC':
         input = '7'
         return input
-    if input =='lectureB':
+    elif input =='lectureB':
         input = '8'
         return input
-    if input == 'comsoc':
+    elif input == 'comsoc':
         input = '9'
         return input
-    if input == 'lectureA':
+    elif input == 'lectureA':
         input = '13'
         return input
+    #cab
     else:
         return "hello" #for debugging purposes
     
@@ -159,6 +162,9 @@ def ai_trigger(goal_node):
     direction_list = []#empty list to contain the generated path
     direction_list = path_generator(graph,start_node,target_node)
     return direction_list
+
+def convert_node():
+    return 'hello'
 
 def main_ai(selected):
     

@@ -2,9 +2,13 @@
 
 
 {% block title%}
-    <title>SELECT ROOM</title>
+    <title>PATH</title>
 {% endblock %}
 
-{% block selectroom %}
-<h1>{{selected}}</h1>
-{% endblock %}
+{% block path %}
+<div>
+    {% for x in direction %}
+    <p style="font-size: 15px; text-align: center;">{{x}}</p>
+    {% endfor %}
+</div>
+{% endblock %}  
