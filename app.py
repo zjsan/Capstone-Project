@@ -10,6 +10,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/index/#roomselect')
+def room():
+    return redirect('/index/#roomselect')
 
 @app.route('/path/', methods = ["GET","POST"])
 def get_data():
