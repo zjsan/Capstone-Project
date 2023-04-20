@@ -7,8 +7,6 @@ app = Flask(__name__)
 #defining view routes
 @app.route('/')
 @app.route('/index/')
-@app.route('/index/#selectroom/')
-@app.route('/index/#aboutus/')
 def index():
     return render_template('index.html')
 
@@ -30,7 +28,7 @@ def get_data():
             direction =  main_ai(selected)#passing user input to the ai
 
             #returning the generated path/direction to the web browser
-            return render_template('selectroom.html',direction = direction)
+            return render_template('direction.html',direction = direction)
         
         if request.args['submit'] == 'submit_lab':
             lab = request.args['labrooms']
@@ -41,7 +39,7 @@ def get_data():
             direction = main_ai(selected)#passing user input to the ai
 
             #returning the generate path/direction to the web server
-            return render_template('selectroom.html',direction = direction)
+            return render_template('direction.html',direction = direction)
     #fall back mechanism
     else:
         return redirect(url_for('index.html'))
