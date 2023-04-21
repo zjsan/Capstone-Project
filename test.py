@@ -1,7 +1,19 @@
 from app import index
 
-#creating python graph using dictionary
 
+
+
+#dictionary that contains the different rooms of the building
+rooms = {'0':'LOBBY','1':'DEPARTMENT CHAIR OFFICE','2':'FACULTY ROOM B','3':'FACULTY ROOM A'
+             ,'4':'CONFERENCE ROOM','5':'STAIR','6':'ITSOC OFFICE','7':'LECTURE ROOM 100C','8':'LECTURE ROOM 100B'
+             ,'9':'COMSOC OFFICE','10':'STAIR','11':'COMFORT ROOM','12':'VACANT ROOM','13':'LECTURE ROOM 100A','14':'COMFORT ROOM',
+             '15':'WEARTHER FORECAST','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
+             '19':'STAIR','20':'VACANT ROOM','21':'ROOM 103','22':'ROOM 104','23':'ROOM 105','24':'ROOM 106',
+             '25':'ROOM 107','26':'ROOM 108','27':'ROOM 109','28':'ROOM 110','29':'ROOM 111','30':'VACANT ROOM',
+             '31':'STAIR','32':'ROOM 112','33':'ROOM 113'}
+
+
+#creating search tree of the AI using dictionary
 #0-> LOBBY
 #1-> DEPARTMENT CHAIR OFFICE
 #2-> FACULTY ROOM B
@@ -164,13 +176,31 @@ def ai_trigger(goal_node):
     direction_list = path_generator(graph,start_node,target_node)
     return direction_list
 
-def convert_node():
-    return 'hello'
+#converting AI search space into user inputs
+def convert_node(my_list):
+
+    room_list = []
+
+    #iterating through every values in rooms and graphs as well as the generated path
+    for a,b in rooms.items():
+        for path in my_list:
+
+            #checks if the generated path is equal to the keys in rooms
+            if path == a:
+                room_list.append(b)#appending user readable room names
+    return room_list
+
+            
+
 
 def main_ai(selected):
     
     node = check_input(selected)
 
     my_list = []
+    new_list = []
+
     my_list = ai_trigger(node)
-    return my_list
+    new_list = convert_node(my_list)
+    
+    return new_list
