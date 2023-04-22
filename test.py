@@ -113,10 +113,10 @@ def check_input(selected):
     elif input == 'conference':
         input = '4'
         return input
+    #skip input 5 -> need to work first on the ground floor 
     elif input == 'itsoc':
         input = '6'
         return input
-    #skip input 5 -> need to work first on the ground floor 
     elif input == 'lectureC':
         input = '7'
         return input
@@ -192,15 +192,14 @@ def convert_node(my_list):
 
             
 
-
 def main_ai(selected):
     
     node = check_input(selected)
 
-    my_list = []
-    new_list = []
+    initial_list = []#initial list to be use for containing the generated path/direction
+    new_list = []#list to contain the room names of the generated path/direction
 
-    my_list = ai_trigger(node)
-    new_list = convert_node(my_list)
+    initial_list = ai_trigger(node)
+    new_list = convert_node(initial_list)
     
     return new_list
