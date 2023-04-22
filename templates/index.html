@@ -16,7 +16,6 @@
     </nav>
 </head>
 <body>
-
      <!--LANDING PAGE-->
   <section id="landing">
     <div class="landing">
@@ -50,7 +49,7 @@
                     <option value="conference">CONFERECE ROOM</option>
                   </select>
                   <br><br>
-                  <input type="submit" value="submit_office" name = "submit">
+                  <input type="submit" value="submit_office" name = "submit" class = "my-button">
                 </form>
           </div>
           <div>
@@ -66,21 +65,31 @@
                     <option value="lab6">ROOM 6</option>
                   </select>
                   <br><br>
-                  <input type="submit" value="submit_lab" name="submit" >
+                  <input type="submit" value="submit_lab" name="submit" class = "my-button" placeholder="GO">
                 </form>
           </div>
           <div>
             <h3>LECTURE ROOMS</h3>
             <form action="{{ url_for('get_data')}}">
-                <select required class = "select" name="lecturerooms" id="room3">
+                <select required class = "select" name="lecturerooms" id="room3" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                   <option disabled selected value="" hidden>---SELECT ROOM---</option>
                   <option value="lectureA">100 A</option>
                   <option value="lectureB">100 B</option>
                   <option value="lectureC">100 C</option>
-                  <option value="lectureD">100 D</option>
+                  <option value="lecture101">101</option>
+                  <option value="lecture102">102</option>
+                  <option value="lecture103">103</option>
+                  <option value="lecture104">104</option>
+                  <option value="lecture105">105</option>
+                  <option value="lecture106">106</option>
+                  <option value="lecture107">107</option>
+                  <option value="lecture108">108</option>
+                  <option value="lecture109">109</option>
+                  <option value="lecture110">110</option>
+                  <option value="lecture111">111</option>
                 </select>
                 <br><br>
-                <input type="submit" value="submit_lecture" name = "submit">
+                <input type="submit" value="submit_lecture" name = "submit" class = "my-button">
               </form>
         </div>
       </div>
@@ -95,5 +104,11 @@
         <p>Zainal Jumaine D. Santos</p>
     </div>
     </section>
+
+
+    <script>
+     document.querySelector('.my-button').textContent = 'Submit Form';
+    </script>
+        
 </body>
 </html>
