@@ -29,7 +29,7 @@ rooms = {'0':'LOBBY','1':'DEPARTMENT CHAIR OFFICE','2':'FACULTY ROOM B','3':'FAC
 #12-> VACANT ROOM
 #13-> LECTURE ROOM 100A
 #14-> COMFORT ROOM
-#15-> WEARTHER FORECAST 
+#15-> WEARTHER FORECAST & MODELING LABORATORY
 #16-> METEOROLOGY FACULTY 
 #17-> ROOM 101
 #18-> ROOM 102
@@ -130,6 +130,12 @@ def check_input(selected):
         input = '13'
         return input
     #cab
+    elif input == 'forecast':
+        input = '15'
+        return input
+    elif input == 'meteo':
+        input = '16'
+        return input
     else:
         return "hello" #for debugging purposes
     
