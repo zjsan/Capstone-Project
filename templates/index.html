@@ -41,12 +41,13 @@
               <form action="{{ url_for('get_data')}}" method ="GET">
                   <select required class = "select" name="offices" id="offices" size="1">
                     <option disabled selected value="" hidden>---SELECT ROOM---</option>
-                    <option value = "dept_chair">DEPARTMENT CHAIR OFFICE</option>
+                    <option value ="dept_chair">DEPARTMENT CHAIR OFFICE</option>
                     <option value="facultya">FACULTY ROOM A</option>
                     <option value="facultyb">FACULTY ROOM B</option>
                     <option value="itsoc">ITSOC OFFICE</option>
                     <option value="comsoc">COMSOC OFFICE</option>
                     <option value="conference">CONFERECE ROOM</option>
+                    <option value="meteo">METEOROLOGY FACULTY </option>
                   </select>
                   <br><br>
                   <input type="submit" value="submit_office" name = "submit" class = "my-button">
@@ -63,6 +64,7 @@
                     <option value="lab4">ROOM 4</option>
                     <option value="lab5">ROOM 5</option>
                     <option value="lab6">ROOM 6</option>
+                    <option value="forecast">FORECAST & MODELING</option>
                   </select>
                   <br><br>
                   <input type="submit" value="submit_lab" name="submit" class = "my-button" placeholder="GO">
