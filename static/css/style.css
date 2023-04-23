@@ -81,6 +81,7 @@ li a{
 li a:hover:not(.active)
 {
     background-color: #fbe8a6;
+    border-radius: 50px;
 }
 .active
 {
