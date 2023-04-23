@@ -12,10 +12,6 @@ body{
     
 }
 
-.nav{
-    margin-bottom: 0px;
-}
-
 #landing{
     margin-top:1px;
     margin-left:0px;
@@ -56,6 +52,13 @@ h3{
 p{
     color:#303c6c;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nav{
+    margin-bottom: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
 ul{
