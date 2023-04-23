@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% endblock %} - CAPSTONE PROJECT</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/style1.css') }}">
 </head>
 <body>
      <!--LINKS-->
-     <nav id="nav">
+     <section id = "navigation">
+      <nav id="nav2">
         <ul>
-          <li><a href="{{ url_for('room')}}">SELECT ROOM</a></li>
+          <li><a href="{{ url_for('room')}}">Select another room click here</a></li>
         </ul>
       </nav>
+      <button>View Map</button>
+     </section>
     <section id="landing">
         <div class="landing"></div>
         </div>
     </section>
     <section class ="path">
-      <div>
+      <div id = "direction">
         {% block path %} {% endblock %}
       </div>
     </section>
