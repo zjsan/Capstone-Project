@@ -7,8 +7,8 @@ from app import index
 rooms = {'0':'LOBBY','1':'DEPARTMENT CHAIR OFFICE','2':'FACULTY ROOM B','3':'FACULTY ROOM A'
              ,'4':'CONFERENCE ROOM','5':'STAIR','6':'ITSOC OFFICE','7':'LECTURE ROOM 100C','8':'LECTURE ROOM 100B'
              ,'9':'COMSOC OFFICE','10':'STAIR','11':'COMFORT ROOM','12':'VACANT ROOM','13':'LECTURE ROOM 100A','14':'COMFORT ROOM',
-             '15':'WEARTHER FORECAST','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
-             '19':'STAIR','20':'VACANT ROOM','21':'ROOM 103','22':'ROOM 104','23':'ROOM 105','24':'ROOM 106',
+             '15':'WEATHER FORECAST & SIMULATION LABORATORY','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
+             '19':'STAIR','20':'VACANT ROOM','21':'ROOM 104','22':'ROOM 103','23':'ROOM 105','24':'ROOM 106',
              '25':'ROOM 107','26':'ROOM 108','27':'ROOM 109','28':'ROOM 110','29':'ROOM 111','30':'VACANT ROOM',
              '31':'STAIR','32':'ROOM 112','33':'ROOM 113'}
 
@@ -129,12 +129,52 @@ def check_input(selected):
     elif input == 'lectureA':
         input = '13'
         return input
-    #cab
+    #cab - lecture rooms and offices only
+    #didnt include stairs, crs yet
     elif input == 'forecast':
         input = '15'
         return input
     elif input == 'meteo':
         input = '16'
+        return input
+    elif input == 'lecture101':
+        input = '17'
+        return input
+    elif input == 'lecture102':
+        input = '18'
+        return input
+    elif input == 'lecture104':
+        input = '21'
+        return input
+    elif input == 'lecture103':
+        input = '22'
+        return input
+    elif input == 'lecture105':
+        input = '23'
+        return input
+    elif input == 'lecture106':
+        input = '24'
+        return input
+    elif input == 'lecture107':
+        input = '25'
+        return input
+    elif input == 'lecture108':
+        input = '26'
+        return input
+    elif input == 'lecture109':
+        input = '27'
+        return input
+    elif input == 'lecture110':
+        input = '28'
+        return input
+    elif input == 'lecture111':
+        input = '29'
+        return input
+    elif input == 'lecture112':
+        input = '32'
+        return input
+    elif input == 'lecture113':
+        input = '34'
         return input
     else:
         return "hello" #for debugging purposes
