@@ -1,3 +1,33 @@
 body{
-    background-color:  #fbe8a6;
+    background-color:  #fff;
+}
+
+#navigation{
+    text-align: center;
+}
+ul{
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;  
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+}
+li a{
+    margin-left: 0px;
+    display: block;
+    color: #f4976c;
+    padding: 12px 10px;
+    text-align: center;
+}
+#direction{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+    color: #f4976c;
+    padding: 15px 5px;
+    background-color: #303c6c;
+    border: 1px solid #ddd;
+    border-radius: 15px;
 }
