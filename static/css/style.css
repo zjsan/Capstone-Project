@@ -131,7 +131,7 @@ li a:hover:not(.active)
 {
     background-color: #212a4b;
 }
-#imageforselect{
+.cliparts{
     display: block;
     margin-left: auto;
     margin-right: auto;
