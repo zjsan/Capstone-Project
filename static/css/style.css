@@ -130,6 +130,12 @@ li a:hover:not(.active)
 {
     background-color: #212a4b;
 }
+#imageforselect{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 #selectroom
 {
     margin-top: 30rem;
