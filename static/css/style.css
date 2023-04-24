@@ -91,6 +91,11 @@ li a:hover:not(.active)
     display: flex;
     justify-content: space-around;
 }
+
+.flex-container1{
+    display: flex;
+    justify-content: space-around;
+}
 .select{
     padding: 8px 12px;
     color: #333;
