@@ -7,15 +7,19 @@
     <title>CAPSTONE PROJECT</title>
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css') }}">
 
-    <!--LINKS-->
-    <nav id="nav">
-      <ul>
-        <li><a href="{{ url_for('index')}}">HOME</a></li>
-        <li><a href="#aboutus">ABOUT US</a></li>
-      </ul>
-    </nav>
 </head>
 <body>
+
+  <!--navigation -->
+    <header>
+      <nav id="nav">
+        <ul>
+          <li><a href="{{ url_for('index')}}">HOME</a></li>
+          <li><a href="#aboutus">ABOUT US</a></li>
+        </ul>
+      </nav>
+    </header> 
+
      <!--LANDING PAGE-->
   <section id="landing">
     <div id="landingtext">
@@ -24,15 +28,17 @@
       <p align="center" class="syscaption">powered by AI Technology</p>
   </div>
   <div id="roomButton">
-    <a href="#roomselect">SELECT ROOM</a>
+    <a href="#selectroom">SELECT ROOM</a>
   </div>
   <br><br><br><br>
   </section>  
     <br><br><br><br><br>
 
-  <!--forms-->
+  <!--ROOM SELECTION SECTION-->
   <section id="selectroom">
-      <!--ROOM SELECTION-->
+    <br><br>
+  </section>
+  <section>
       <div id="roomselect">
         <h1>ROOM SELECTION</h1>
         <div class = "flex-container" align="center">
@@ -99,8 +105,12 @@
         <img src="../static/css/Assets/backgroundselect.png" alt="img" style="height: 400px; width: 500px;">
       </div>
   </section>
-    <!--ABOUT US-->
+
+  <!--ABOUT US SECTION PAGE-->
     <section id ="aboutus">
+      <br><br>
+    </section>
+    <section>
       <div align="center">
         <h1 class="maintext">ABOUT US</h1>
         <div class = "cliparts">
@@ -108,8 +118,8 @@
         </div>
         <div>
           <h3 class="maintext">OUR SERVICE</h3>
-          <p>Our system was made for the reason of helping students and instructors who are not familiar with the different rooms of the CIS and CAB Building. We thought of developing an AI that will give the direction of where our users are going. Our AI uses a particular 
-            search algorithm that not only give the direction of the intended user's destination but also it will calculate the most optimal path for the user's 
+          <p>Our system was made for the reason of helping students and instructors who are not familiar with the different rooms of the CIS and CAB Building. We thought of developing an AI that will give the direction of the user's destination. Our AI uses a particular 
+            search algorithm that not only give the direction of the intended user's destination but also calculates the most optimal path for the user's 
             destination. The generated path are also bounded by the building's floor plans and building's structure during the duration of the develeopment of the AI.</p>
         </div>
         <div id = "devs">
