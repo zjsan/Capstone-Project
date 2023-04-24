@@ -35,7 +35,11 @@ def get_data():
         
         if request.args['submit'] == 'submit_lab':
             lab = request.args['labrooms']
-            return lab
+            selected = lab
+            direction = main_ai(selected)#passing user input to the ai
+          
+            #returning the generate path/direction to the web server
+            return render_template('direction.html',direction = direction)
         if request.args['submit'] == 'submit_lecture':
             lecture_room = request.args['lecturerooms'] 
             selected = lecture_room
