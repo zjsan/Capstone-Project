@@ -143,6 +143,12 @@ li a:hover:not(.active)
     margin-right: auto;
     width: 45%;
 }
+#roomselect_picture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 34%;
+}
 #selectroom
 {
     margin-top: 30rem;
