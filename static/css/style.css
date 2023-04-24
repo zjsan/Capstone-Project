@@ -13,15 +13,15 @@ body{
 }
 
 #landing{
-    margin-top:1px;
+    margin-top:1rem;
     margin-left:0px;
     margin-right:0px;
     margin-bottom:50px;
 }
 
-#landing >div{
-    margin-top: 0px;
-    margin-bottom:0px;
+#landingtext{
+    margin-top: 2rem;
+    margin-bottom:1px;
     max-height: 100%;
     width: 100%;
 }
@@ -130,6 +130,7 @@ li a:hover:not(.active)
     display: inline-block;
     position: relative;
     margin: 10px 5px;
+    margin-top: 2rem;
     font-size: 15px;
 }
 #roomButton >a:hover
@@ -140,7 +141,7 @@ li a:hover:not(.active)
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 45%;
 }
 #selectroom
 {
@@ -148,7 +149,10 @@ li a:hover:not(.active)
 }
 #aboutus
 {
-    margin-top: 40rem;
+    margin-top: 30rem;
+}
+#devs{
+    margin-top: 15rem;
 }
 
 
