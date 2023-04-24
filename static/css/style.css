@@ -1,5 +1,8 @@
-
+html{
+    box-sizing: border-box;
+}
 body{
+    box-sizing: border-box;
     background-color:#fff   ;
     background-image: url("Assets/bg1.jpg");
     background-size: 1530px 800px;
@@ -12,15 +15,60 @@ body{
     
 }
 
+header{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    background-color:#fcfcfa;
+}
+#nav{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0px 5px;
+}
+li a{
+    margin-left: 0px;
+    font-weight: bold;
+    display: block;
+    color: #f4976c;
+    padding: 12px 10px;
+    text-decoration: none;
+    text-align: center;
+}
+li a:hover:not(.active)
+{
+    background-color: #fbe8a6;
+    border-radius: 50px;
+}
+.active
+{
+    background-color: #303c6c;
+}
 #landing{
-    margin-top:1rem;
+    top:10rem;
     margin-left:0px;
     margin-right:0px;
-    margin-bottom:50px;
+    margin-bottom:10rem;
 }
 
 #landingtext{
-    margin-top: 2rem;
+    margin-top: 6rem;
     margin-bottom:1px;
     max-height: 100%;
     width: 100%;
@@ -52,40 +100,6 @@ h3{
 p{
     color:#303c6c;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-#nav{
-    margin-bottom: 0px;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-}
-
-ul{
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
-}
-li{
-    list-style-type: none;
-    display: inline-block;
-}
-li a{
-    margin-left: 0px;
-    display: block;
-    color: #f4976c;
-    padding: 12px 10px;
-    text-decoration: none;
-    text-align: center;
-}
-li a:hover:not(.active)
-{
-    background-color: #fbe8a6;
-    border-radius: 50px;
-}
-.active
-{
-    background-color: #303c6c;
 }
 .flex-container{
     display: flex;
@@ -130,7 +144,7 @@ li a:hover:not(.active)
     display: inline-block;
     position: relative;
     margin: 10px 5px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 15px;
 }
 #roomButton >a:hover
@@ -151,11 +165,11 @@ li a:hover:not(.active)
 }
 #selectroom
 {
-    margin-top: 30rem;
+    margin-top: 40rem;
 }
 #aboutus
 {
-    margin-top: 30rem;
+    margin-top: 40rem;
 }
 #devs{
     margin-top: 15rem;
