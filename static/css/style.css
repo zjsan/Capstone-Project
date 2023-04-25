@@ -109,6 +109,7 @@ p{
 .flex-container1{
     display: flex;
     justify-content: space-around;
+    
 }
 .select{
     padding: 8px 12px;
@@ -174,6 +175,7 @@ p{
 #devs{
     margin-top: 15rem;
 }
-
-
+td{
+    padding: 15px
+}
   
