@@ -31,3 +31,9 @@ li a{
     border: 1px solid #ddd;
     border-radius: 15px;
 }
+.output{
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}

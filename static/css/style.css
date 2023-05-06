@@ -175,5 +175,32 @@ p{
 #devs{
     margin-top: 15rem;
 }
+table{
+    margin-left: 60px;
+}
+th {
+    text-align: center;
+    padding: 8px;
+    font-size: 18px;
+}
+td{
+ 
+    text-align: center;
+    padding: 8px;
+    font-size: 15px;
+}
+
+footer{
+    margin-top: 5rem;
+    padding: 0px 10px;
+    background-color: #303c6c;
+}
+.footertext{
+    color: #fcfcfa;
+    font-size: 13px;
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+}
 
   
