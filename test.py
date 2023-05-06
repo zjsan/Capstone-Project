@@ -1,10 +1,8 @@
 from app import index
 
 
-
-
 #dictionary that contains the different rooms of the building
-rooms = {'0':'LOBBY','1':'PROCEED TO YOUR LEFT','2':'PROCEED TO YOUR RIGHT','3':'FACULTY ROOM A'
+rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
              ,'4':'CONFERENCE ROOM','5':'GO UP STAIR','6':'ITSOC OFFICE','7':'LECTURE ROOM 100C','8':'LECTURE ROOM 100B'
              ,'9':'COMSOC OFFICE','10':'GO UP STAIR','11':'COMFORT ROOM','12':'VACANT ROOM','13':'LECTURE ROOM 100A','14':'COMFORT ROOM',
              '15':'WEATHER FORECAST & SIMULATION LABORATORY','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
@@ -247,5 +245,4 @@ def main_ai(selected):
 
     initial_list = ai_trigger(node)
     new_list = convert_node(initial_list)
-    
     return new_list
