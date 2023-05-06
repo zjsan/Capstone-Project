@@ -18,7 +18,7 @@ def room():
 def get_data():
 
     #checking the form user submitted
-    #validating forms
+    #validating formsX
     selected = ""
     direction = []
 
