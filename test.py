@@ -10,7 +10,7 @@ rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
              '25':'ROOM 107','26':'ROOM 108','27':'ROOM 109','28':'ROOM 110','29':'ROOM 111','30':'VACANT ROOM',
              '31':'STAIR','32':'ROOM 112','33':'ROOM 113'}
 
-
+target = "GO STRAIGHT FORWARD"
 #creating search tree of the AI using dictionary
 #0-> LOBBY
 #1-> DEPARTMENT CHAIR OFFICE
@@ -53,7 +53,7 @@ rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
 #makauma agdebug :)
 graph = {
     
-    '0': ['1','2'], 
+    '0': ['1','2','26'], #ADDED 108
     "1": ['3'],
     '2': ['4'],
     '3': ['5','6','7'],
@@ -79,7 +79,7 @@ graph = {
     '23': ['24'],
     '24': ['25'],
     '25': ['26'],
-    '26': ['27'],
+    '26': ['25','27'],#ADDED 107 -> 25
     '27': ['28'],
     '28': ['29'],
     '29': ['30','31','32'],
@@ -212,12 +212,12 @@ def path_generator(graph,start,end):
     return False   
 
 def ai_trigger(goal_node):
-    
-    start_node = '0'
-    target_node = goal_node
 
     direction_list = []#empty list to contain the generated path
-    direction_list = path_generator(graph,start_node,target_node)
+    start_node = '0'
+    target_node = goal_node
+    
+    direction_list = path_generator(graph,start_node,target_node)#generate direction/path
     return direction_list
 
 #converting AI search space into user inputs
@@ -235,14 +235,13 @@ def convert_node(my_list):
     return room_list
 
             
-
 def main_ai(selected):
     
-    node = check_input(selected)
+    node = check_input(selected)#user input into ai input 
 
     initial_list = []#initial list to be use for containing the generated path/direction
     new_list = []#list to contain the room names of the generated path/direction
 
-    initial_list = ai_trigger(node)
-    new_list = convert_node(initial_list)
+    initial_list = ai_trigger(node)#starts the initial state to goal state of ai
+    new_list = convert_node(initial_list)#ai input to user input
     return new_list
