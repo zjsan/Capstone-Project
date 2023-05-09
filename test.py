@@ -214,10 +214,9 @@ def path_generator(graph,start,end):
 def ai_trigger(goal_node):
 
     direction_list = []#empty list to contain the generated path
-    start_node = '0'
-    target_node = goal_node
+    start_node = '0'#lobby
     
-    direction_list = path_generator(graph,start_node,target_node)#generate direction/path
+    direction_list = path_generator(graph,start_node,goal_node)#generate direction/path
     return direction_list
 
 #converting AI search space into user inputs
@@ -226,12 +225,17 @@ def convert_node(my_list):
     room_list = []
 
     #iterating through every values in rooms and graphs as well as the generated path
+    #a -> key
+    #b -> values 
     for a,b in rooms.items():
         for path in my_list:
 
             #checks if the generated path is equal to the keys in rooms
             if path == a:
-                room_list.append(b)#appending user readable room names
+                if path == '26':#26 -> room 108 then go straight forward
+                    room_list.append(target)
+                else:
+                    room_list.append(b)#appending user readable room names
     return room_list
 
             
