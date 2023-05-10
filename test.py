@@ -225,6 +225,7 @@ def ai_trigger(goal_node):
 #converting AI search space into user inputs
 #room 108 and 107 are in incorrect placement when target is 107
 #although in the console the nodes are in proper placement 
+#temporary solution -> used list.insert() instead of list.append for room 108
 def convert_node(my_list):
 
     room_list = []
@@ -237,8 +238,8 @@ def convert_node(my_list):
             #checks if the generated path is equal to the keys in rooms
             if path == a:
                 if path == '26':#26 -> room 108 then go straight forward
-                    print(b)
-                    room_list.append(target)
+                    #print(b)
+                    room_list.insert(1,target)
                 else:
                     print(b)
                     room_list.append(b)#appending user readable room names
