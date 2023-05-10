@@ -201,6 +201,25 @@ def check_input(selected):
     elif input == 'lecture113':
         input = '34'
         return input
+    #2nd floor
+    elif input == 'lab7':
+        input = '35'
+        return input
+    elif input == 'lab6':
+        input = '36'
+        return input
+    elif input == 'lab1':
+        input = '37'
+        return input
+    elif input == 'lecture200B':
+        input = '38'
+        return input
+    elif input == 'lab2':
+        input = '40'
+        return input
+    elif input == 'lecture200A':
+        input = '41'
+        return input
     else:
         return "hello" #for debugging purposes
     
