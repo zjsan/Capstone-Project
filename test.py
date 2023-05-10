@@ -50,10 +50,11 @@ target = "GO STRAIGHT FORWARD"
 
 #AI knowledge set(search space)
 #still on the building's ground floor
-#makauma agdebug :)
+#there is a problem when inserting a predecessor node in a succesor node
+#backtracking problem
 graph = {
     
-    '0': ['1','2','26'], #ADDED 108
+    '0': ['1','26','2'], #ADDED 108
     "1": ['3'],
     '2': ['4'],
     '3': ['5','6','7'],
@@ -78,7 +79,7 @@ graph = {
     '22': [],
     '23': ['24'],
     '24': ['25'],
-    '25': ['26'],
+    '25': ['24','26'],
     '26': ['25','27'],#ADDED 107 -> 25
     '27': ['28'],
     '28': ['29'],
@@ -205,6 +206,8 @@ def path_generator(graph,start,end):
             #get out of the loop
             if nextNode == end:
                 #displaying the path
+                print(search_queue)
+                print(visited)
                 print(*path)
                 return(path)
         #traversing all neighbor nodes if goal is not yet reached
@@ -220,6 +223,8 @@ def ai_trigger(goal_node):
     return direction_list
 
 #converting AI search space into user inputs
+#room 108 and 107 are in incorrect placement when target is 107
+#although in the console the nodes are in proper placement 
 def convert_node(my_list):
 
     room_list = []
@@ -229,13 +234,15 @@ def convert_node(my_list):
     #b -> values 
     for a,b in rooms.items():
         for path in my_list:
-
             #checks if the generated path is equal to the keys in rooms
             if path == a:
                 if path == '26':#26 -> room 108 then go straight forward
+                    print(b)
                     room_list.append(target)
                 else:
+                    print(b)
                     room_list.append(b)#appending user readable room names
+    print(room_list)#for debugging
     return room_list
 
             
@@ -247,5 +254,6 @@ def main_ai(selected):
     new_list = []#list to contain the room names of the generated path/direction
 
     initial_list = ai_trigger(node)#starts the initial state to goal state of ai
+    print(initial_list)#for debugging
     new_list = convert_node(initial_list)#ai input to user input
     return new_list
