@@ -81,6 +81,7 @@
             <form action="{{ url_for('get_data')}}">
                 <select required class = "select" name="lecturerooms" id="room3" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                   <option disabled selected value="" hidden>---SELECT ROOM---</option>
+                  <!--FIRST FLOOR-->
                   <option value="lectureA">100 A</option>
                   <option value="lectureB">100 B</option>
                   <option value="lectureC">100 C</option>
@@ -95,6 +96,22 @@
                   <option value="lecture109">109</option>
                   <option value="lecture110">110</option>
                   <option value="lecture111">111</option>
+                  <option value="lecture112">112</option>
+                  <option value="lecture113">113</option>
+                  <!--2ND FLOOR-->
+                  <option value="lecture200B">200B</option>
+                  <option value="lecture200A">200A</option>
+                  <option value="lecture201">201</option>
+                  <option value="lecture202">202</option>
+                  <option value="lecture203">203</option>
+                  <option value="lecture204">204</option>
+                  <option value="lecture205">205</option>
+                  <option value="lecture206">206</option>
+                  <option value="lecture207">207</option>
+                  <option value="lecture208">208</option>
+                  <option value="lecture209">209</option>
+                  <option value="lecture210">210</option>
+                  <option value="lecture211">211</option>
                 </select>
                 <br><br>
                 <input type="submit" value="submit_lecture" name = "submit" class = "my-button">
