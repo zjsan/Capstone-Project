@@ -10,7 +10,7 @@ rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
              '25':'ROOM 107','26':'ROOM 108','27':'ROOM 109','28':'ROOM 110','29':'ROOM 111','30':'VACANT ROOM',
              '31':'STAIR','32':'ROOM 112','33':'ROOM 113'}
 
-target = "GO STRAIGHT FORWARD"
+target = "GO STRAIGHT FORWARD"#for room destination is ROOM 108
 #creating search tree of the AI using dictionary
 #0-> LOBBY
 #1-> DEPARTMENT CHAIR OFFICE
@@ -47,6 +47,32 @@ target = "GO STRAIGHT FORWARD"
 #32-> ROOM 112
 #33-> COMFORT ROOM
 #34-> ROOM 113
+#35-> ROOM 7-COMPUTER LABORATORY ROOM
+#36-> ROOM 6
+#37-> ROOM 1
+#38-> ROOM 200 B
+#39-> VACANT ROOM
+#40-> ROOM 2
+#41-> ROOM 200A
+#42-> CLIMATOLOGY LABORATORY
+#43-> ROOM 3
+#44-> REMOTE SENSING LABORATORY
+#45-> ROOM 4
+#46-> VACANT ROOM
+#47-> ROOM 5
+#48-> ROOM 211
+#49-> ROOM 210
+#50-> ROOM 209
+#51-> ROOM 208
+#52-> ROOM 207
+#53-> ROOM 206
+#54-> ROOM 205
+#55-> ROOM 204
+#56-> ROOM 203
+#57-> COMFORT ROOM
+#58-> ROOM 202
+#59-> ROOM 201
+#60-> COMFORT ROOM
 
 #AI knowledge set(search space)
 #still on the building's ground floor
@@ -59,21 +85,21 @@ graph = {
     '2': ['4'],
     '3': ['5','6','7'],
     '4': ['8','9','10'],
-    '5': [],
+    '5': ['60','35','36'],#stair
     '6': ['11'],
     '7': ['12'],
     '8': ['13'],
     '9': ['14'],
-    '10': [],
-    '11': [],
+    '10': [],#stair
+    '11': [],#cr
     '12': ['15'],
     '13': [],
-    '14': [],
+    '14': [],#cr
     '15': ['16'],
     '16': ['17'],
     '17': ['18'],
     '18': ['19','20','21'],
-    '19': [],
+    '19': ['49','48'],#stair
     '20': ['22'],
     '21': ['23'],
     '22': [],
@@ -85,7 +111,7 @@ graph = {
     '28': ['29'],
     '29': ['30','31','32'],
     '30': ['33'],
-    '31': [],
+    '31': [],#stair
     '32': ['34'],
     '33': [],
     '34': [],
