@@ -8,7 +8,7 @@ rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
              '15':'WEATHER FORECAST & SIMULATION LABORATORY','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
              '19':'GO UP STAIR','20':'VACANT ROOM','21':'ROOM 104','22':'ROOM 103','23':'ROOM 105','24':'ROOM 106',
              '25':'ROOM 107','26':'ROOM 108','27':'ROOM 109','28':'ROOM 110','29':'ROOM 111','30':'VACANT ROOM',
-             '31':'STAIR','32':'ROOM 112','33':'ROOM 113'}
+             '31':'GO UP STAIR','32':'ROOM 112','33':'COMFORT ROOM,','34':'ROOM 113','35':'ROOM 7','36':'ROOM 6','37':'ROOM 1','38':'ROOM 200B','39':'VACANT ROOM','40':'ROOM 2','41':'ROOM 200A'}
 
 target = "GO STRAIGHT FORWARD"#for room destination is ROOM 108
 #creating search tree of the AI using dictionary
@@ -126,7 +126,11 @@ graph = {
     '43': ['40'],
     '44': ['46'],
     '45': ['47'],#room 4
-
+    '46': [],
+    '47':[],
+    '48':[],
+    '49':[],
+    '60':[]
 }
 
 #converting user input into AI pre-defined knowledge(search space)
