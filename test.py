@@ -8,7 +8,7 @@ rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
              '15':'WEATHER FORECAST & SIMULATION LABORATORY','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
              '19':'GO UP STAIR','20':'VACANT ROOM','21':'ROOM 104','22':'ROOM 103','23':'ROOM 105','24':'ROOM 106',
              '25':'ROOM 107','26':'ROOM 108','27':'ROOM 109','28':'ROOM 110','29':'ROOM 111','30':'VACANT ROOM',
-             '31':'GO UP STAIR','32':'ROOM 112','33':'COMFORT ROOM,','34':'ROOM 113','35':'ROOM 7','36':'ROOM 6','37':'ROOM 1','38':'ROOM 200B','39':'VACANT ROOM','40':'ROOM 2','41':'ROOM 200A'}
+             '31':'GO UP STAIR','32':'ROOM 112','33':'COMFORT ROOM,','34':'ROOM 113','35':'ROOM 7','36':'ROOM 6','37':'ROOM 1','38':'ROOM 200B','39':'VACANT ROOM','40':'ROOM 2','41':'ROOM 200A','42':'CLIMATOLOGY LABORATORY','43':'ROOM 3'}
 
 target = "GO STRAIGHT FORWARD"#for room destination is ROOM 108
 #creating search tree of the AI using dictionary
@@ -78,6 +78,7 @@ target = "GO STRAIGHT FORWARD"#for room destination is ROOM 108
 #still on the building's ground floor
 #there is a problem when inserting a predecessor node in a succesor node
 #backtracking problem
+# MAY 12, 2023, successfully the different rooms in the search space
 graph = {
     
     '0': ['1','26','2'], #ADDED 108
@@ -99,7 +100,7 @@ graph = {
     '16': ['17'],
     '17': ['18'],
     '18': ['19','20','21'],
-    '19': ['49','48'],#stair
+    '19': ['61','49','48'],#stair
     '20': ['22'],
     '21': ['23'],
     '22': [],
@@ -111,7 +112,7 @@ graph = {
     '28': ['29'],
     '29': ['30','31','32'],
     '30': ['33'],
-    '31': [],#stair
+    '31': ['58','56','57'],#stair
     '32': ['34'],
     '33': [],
     '34': [],
@@ -121,16 +122,27 @@ graph = {
     '38': ['41'],
     '39': ['42'],
     '40': ['43'],
-    '41': [],
+    '41': [],#current last node in the room list
     '42': ['44'],
     '43': ['40'],
     '44': ['46'],
     '45': ['47'],#room 4
     '46': [],
-    '47':[],
-    '48':[],
-    '49':[],
-    '60':[]
+    '47':['36','45'],
+    '48':['19','61','49'],
+    '49':['50'],
+    '50':['51'],
+    '51':[],
+    '52':['53','51'],#inserted 51
+    '53':['54','52'],#inserted 52 and 54
+    '54':['55'],
+    '55':['54','56'],#inserted 54 -> room 205
+    '56':['55','57','31','58'],#inserted 55 -> room 204
+    '57':[],
+    '58':['59'],
+    '59':[],
+    '60':[],
+    '61':[]
 }
 
 #converting user input into AI pre-defined knowledge(search space)
@@ -234,6 +246,18 @@ def check_input(selected):
         return input
     elif input == 'lecture200A':
         input = '41'
+        return input
+    elif input == 'climatology':
+        input = '42'
+        return input
+    elif input == 'lab3':
+        input = '43'
+        return input
+    elif input == 'remotesensing':
+        input = '44'
+        return input
+    elif input == 'lab5':
+        input = '47'
         return input
     else:
         return "hello" #for debugging purposes
