@@ -8,7 +8,9 @@ rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
              '15':'WEATHER FORECAST & SIMULATION LABORATORY','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
              '19':'GO UP STAIR','20':'VACANT ROOM','21':'ROOM 104','22':'ROOM 103','23':'ROOM 105','24':'ROOM 106',
              '25':'ROOM 107','26':'ROOM 108','27':'ROOM 109','28':'ROOM 110','29':'ROOM 111','30':'VACANT ROOM',
-             '31':'GO UP STAIR','32':'ROOM 112','33':'COMFORT ROOM,','34':'ROOM 113','35':'ROOM 7','36':'ROOM 6','37':'ROOM 1','38':'ROOM 200B','39':'VACANT ROOM','40':'ROOM 2','41':'ROOM 200A','42':'CLIMATOLOGY LABORATORY','43':'ROOM 3'}
+             '31':'GO UP STAIR','32':'ROOM 112','33':'COMFORT ROOM,','34':'ROOM 113','35':'ROOM 7','36':'ROOM 6','37':'ROOM 1','38':'ROOM 200B','39':'VACANT ROOM','40':'ROOM 2','41':'ROOM 200A',
+             '42':'CLIMATOLOGY','43':'ROOM 3','44':'REMOTE SENSING',
+             '45':'ROOM 4','46':'VACANT ROOM','48':'ROOM 211','49':'ROOM 210','50':'ROOM 209','51':'ROOM 208','52':'ROOM 207','53':'ROOM 206','54':'ROOM 205','55':'ROOM 204','56':'ROOM 203','58':'ROOM 202','59':'ROOM 201'}
 
 target = "GO STRAIGHT FORWARD"#for room destination is ROOM 108
 #creating search tree of the AI using dictionary
@@ -132,7 +134,7 @@ graph = {
     '48':['19','61','49'],
     '49':['50'],
     '50':['51'],
-    '51':[],
+    '51':['52'],
     '52':['53','51'],#inserted 51
     '53':['54','52'],#inserted 52 and 54
     '54':['55'],
@@ -259,8 +261,41 @@ def check_input(selected):
     elif input == 'lab5':
         input = '47'
         return input
+    elif input == 'lecture211':
+        input = '48'
+        return input
+    elif input == 'lecture210':
+        input = '49'
+        return input
+    elif input == 'lecture209':
+        input = '50'
+        return input
+    elif input == 'lecture208':
+        input = '51'
+        return input
+    elif input == 'lecture207':
+        input = '52'
+        return input
+    elif input == 'lecture206':
+        input = '53'
+        return input
+    elif input == 'lecture205':
+        input = '54'
+        return input
+    elif input == 'lecture204':
+        input = '55'
+        return input
+    elif input == 'lecture203':
+        input = '56'
+        return input
+    elif input == 'lecture202':
+        input = '58'
+        return input
+    elif input == 'lecture201':
+        input = '59'
+        return input
     else:
-        return "hello" #for debugging purposes
+        return "SORRY THE SERVER IS DOWN" #for debugging purposes
     
 
 #main algorithm for the room direction
@@ -312,7 +347,12 @@ def ai_trigger(goal_node):
 #temporary solution -> used list.insert() instead of list.append for room 108
 def convert_node(my_list):
 
-    room_list = []
+    room_list = []#contain the direction/path 
+
+    up = "GO UPSTAIR"
+    left = "TURN LEFT"
+    right = "TURN RIGHT"
+    straight = "GO STRAIGHT FORWARD"
 
     #iterating through every values in rooms and graphs as well as the generated path
     #a -> key
