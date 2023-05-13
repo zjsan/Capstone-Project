@@ -2,7 +2,7 @@ from app import index
 
 
 #dictionary that contains the different rooms of the building
-rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
+rooms = {'0':'LOBBY','1':'DEPARTMENT CHAIR OFFICE','2':'FACULTY ROOM B','3':'FACULTY ROOM A'
              ,'4':'CONFERENCE ROOM','5':'GO UP STAIR','6':'ITSOC OFFICE','7':'LECTURE ROOM 100C','8':'LECTURE ROOM 100B'
              ,'9':'COMSOC OFFICE','10':'GO UP STAIR','11':'COMFORT ROOM','12':'VACANT ROOM','13':'LECTURE ROOM 100A','14':'COMFORT ROOM',
              '15':'WEATHER FORECAST & SIMULATION LABORATORY','16':'METEOROLOGY FACULTY','17':'ROOM 101','18':'ROOM 102',
@@ -12,7 +12,6 @@ rooms = {'0':'LOBBY','1':'GO LEFT','2':'GO RIGHT','3':'FACULTY ROOM A'
              '42':'CLIMATOLOGY','43':'ROOM 3','44':'REMOTE SENSING',
              '45':'ROOM 4','46':'VACANT ROOM','48':'ROOM 211','49':'ROOM 210','50':'ROOM 209','51':'ROOM 208','52':'ROOM 207','53':'ROOM 206','54':'ROOM 205','55':'ROOM 204','56':'ROOM 203','58':'ROOM 202','59':'ROOM 201'}
 
-target = "GO STRAIGHT FORWARD"#for room destination is ROOM 108
 #creating search tree of the AI using dictionary
 #0-> LOBBY
 #1-> DEPARTMENT CHAIR OFFICE
@@ -348,12 +347,14 @@ def ai_trigger(goal_node):
 def convert_node(my_list):
 
     room_list = []#contain the direction/path 
+    print(my_list[-1])
 
     up = "GO UPSTAIR"
     left = "TURN LEFT"
     right = "TURN RIGHT"
     straight = "GO STRAIGHT FORWARD"
-
+    target_Dept = 'REFER TO THE ROOM IN YOUR LEFT'
+    target_FacultyB = 'REFER TO THE ROOM IN YOUR RIGHT'
     #iterating through every values in rooms and graphs as well as the generated path
     #a -> key
     #b -> values 
@@ -361,9 +362,15 @@ def convert_node(my_list):
         for path in my_list:
             #checks if the generated path is equal to the keys in rooms
             if path == a:
-                if path == '26':#26 -> room 108 then go straight forward
+                if path == '1':
+                    room_list.insert(2,left)
+                elif path == '2':
+                    room_list.insert(2,right)
+                elif path == '7':
+                    room_list.insert(3,right) 
+                elif path == '26':#26 -> room 108 then go straight forward
                     #print(b)
-                    room_list.insert(1,target)
+                    room_list.insert(1,straight)
                 else:
                     print(b)
                     room_list.append(b)#appending user readable room names
