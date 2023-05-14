@@ -367,10 +367,14 @@ def convert_node(my_list):
                 elif path == '2':
                     room_list.insert(2,right)
                 elif path == '7':
-                    room_list.insert(3,right) 
+                    room_list.insert(3,right)
+                    room_list.append(b) 
                 elif path == '26':#26 -> room 108 then go straight forward
                     #print(b)
                     room_list.insert(1,straight)
+                elif path == '58':
+                    room_list.insert(6,left)
+                    room_list.append(b)
                 else:
                     print(b)
                     room_list.append(b)#appending user readable room names
