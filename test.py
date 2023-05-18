@@ -76,10 +76,9 @@ rooms = {'0':'LOBBY','1':'DEPARTMENT CHAIR OFFICE','2':'FACULTY ROOM B','3':'FAC
 #60-> COMFORT ROOM
 
 #AI knowledge set(search space)
-#still on the building's ground floor
 #there is a problem when inserting a predecessor node in a succesor node
 #backtracking problem
-# MAY 12, 2023, successfully the different rooms in the search space
+# MAY 12, 2023, successfully represented the different rooms in the search space
 graph = {
     
     '0': ['1','26','2'], #ADDED 108
@@ -183,7 +182,6 @@ def check_input(selected):
         input = '13'
         return input
     #cab - lecture rooms and offices only
-    #didnt include stairs, crs yet
     elif input == 'forecast':
         input = '15'
         return input
@@ -364,8 +362,10 @@ def convert_node(my_list):
             if path == a:
                 if path == '1':
                     room_list.insert(2,left)
+                    room_list.append(b)
                 elif path == '2':
                     room_list.insert(2,right)
+                    room_list.append(b)
                 elif path == '7':
                     room_list.insert(3,right)
                     room_list.append(b) 
