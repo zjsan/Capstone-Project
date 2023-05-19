@@ -2,7 +2,7 @@ body{
     background-color:  #fff;
 }
 
-#navigation{
+.navigation{
     text-align: center;
 }
 ul{
@@ -30,6 +30,9 @@ li a{
     background-color: #303c6c;
     border: 1px solid #ddd;
     border-radius: 15px;
+}
+#map{
+    display: none;
 }
 .output{
     font-size: 15px;
