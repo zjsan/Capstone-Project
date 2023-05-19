@@ -9,13 +9,16 @@
 </head>
 <body>
      <!--LINKS-->
-     <section id = "navigation">
+     <section class = "navigation">
       <nav id="nav2">
         <ul>
           <li><a href="{{ url_for('room')}}">Select another room click here</a></li>
         </ul>
       </nav>
-      <button>View Map</button>
+      <div id="map">
+        <img src="../static/css/Assets/undraw_Firmware_re_fgdy.png" alt="img">
+      </div>
+      <button type="button">View Map</button>
      </section>
     <section id="landing">
         <div class="landing"></div>
