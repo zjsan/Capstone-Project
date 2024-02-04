@@ -55,13 +55,13 @@
                     <option value="meteo">METEOROLOGY FACULTY </option>
                   </select>
                   <br><br>
-                  <input type="submit" value="submit_office" name = "submit" class = "my-button">
+                  <input type="submit" value="submit office" name = "submit" class = "my-button">
                 </form>
           </div>
           <div>
               <h3>LABORATORY ROOMS</h3>
               <form action="{{ url_for('get_data')}}">
-                  <select required class = "select" name="labrooms" id="room1" size="1">
+                  <select required class = "select" name="labrooms" id="lab" size="1">
                     <option disabled selected value="" hidden>---SELECT ROOM---</option>
                     <option value="lab1">ROOM 1</option>
                     <option value="lab2">ROOM 2</option>
@@ -76,13 +76,13 @@
                     <option value="remotesensing">REMOTE SENSING LABORATORY</option>
                   </select>
                   <br><br>
-                  <input type="submit" value="submit_lab" name="submit" class = "my-button" placeholder="GO">
+                  <input type="submit" value="submit lab" name="submit" class = "my-button" placeholder="GO">
                 </form>
           </div>
           <div>
             <h3>LECTURE ROOMS</h3>
             <form action="{{ url_for('get_data')}}">
-                <select required class = "select" name="lecturerooms" id="room3" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                <select required class = "select" name="lecturerooms" id="lectureroom" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                   <option disabled selected value="" hidden>---SELECT ROOM---</option>
                   <!--FIRST FLOOR-->
                   <option value="lectureA">100 A</option>
@@ -117,7 +117,7 @@
                   <option value="lecture211">211</option>
                 </select>
                 <br><br>
-                <input type="submit" value="submit_lecture" name = "submit" class = "my-button">
+                <input type="submit" value="submit lecture" name = "submit" class = "my-button">
               </form>
         </div>
       </div>
@@ -138,9 +138,10 @@
         </div>
         <div>
           <h2 class="maintext">OUR SERVICE</h2>
-          <p>Our system was made for the reason of helping students and instructors who are not familiar with the different rooms of the CIS and CAB Building. We thought of developing an AI that will give the direction of the user's destination. Our AI uses a particular 
-            search algorithm that not only give the direction of the intended user's destination but also calculates the most optimal path for the user's 
-            destination. The generated path are also bounded by the building's floor plans and building's structure during the duration of the develeopment of the AI.</p>
+          <p>Our system was made for the reason of helping students and instructors who are not familiar with the different rooms of the CIS and CAB Building.
+            We thought of developing an AI that will give the direction of our user's destination. 
+            Our AI uses a particular 
+            search algorithm that not only give the direction of the user's destination room but also it calculates the most optimal path.</p>
         </div>
         <div id = "devs">
         <h2 class="maintext">OUR TEAM</h2>

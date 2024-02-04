@@ -108,7 +108,15 @@ p{
 .flex-container{
     display: flex;
     justify-content: space-around;
+    margin-right: 3rem;
 }
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
 
 .flex-container1{
     display: flex;
@@ -130,6 +138,15 @@ p{
 .select:hover{
     outline: none;
     border: 2px solid #bbb;
+}
+#offices{
+    width: auto;
+}
+#lab{
+    width: auto;
+}
+#lectureroom{
+    width: auto;
 }
 .roomtitle{
     position: relative;
@@ -162,6 +179,8 @@ p{
     margin-right: auto;
     width: 45%;
 }
+
+/*applies to all cliparts*/
 .picture_container{
     display: flex;
     justify-content: center;
@@ -175,6 +194,7 @@ p{
     max-width: 100%;
     max-width: 100%;
 }
+
 #selectroom
 {
     margin-top: 40rem;
@@ -183,6 +203,8 @@ p{
 {
     margin-top: 40rem;
 }
+
+/*FOOTER*/
 #devs{
     margin-top: 15rem;
 }
