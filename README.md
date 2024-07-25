@@ -1,7 +1,7 @@
 
 # Class Room Directory System Using BFS Algorithm
 
-This web application was built using python's flask framework. The system utilisez the breadth-first search algorithm in generating the pathways that leads the optimal direction for a specific classrom in the MMSU CIS building. A search tree of the program was created using the dictionary data structure of python to represent the different lecture rooms and classrooms of MMSU CIS building in the academic year 2022-2023.
+This web application was built using python's flask framework. The system utilizes the breadth-first search algorithm in generating the pathways that leads the optimal direction for a specific classrom in the MMSU CIS building. A search tree of the program was created using the dictionary data structure of python to represent the different lecture rooms and classrooms of MMSU CIS building in the academic year 2022-2023.
 
 
 
